@@ -1,0 +1,19 @@
+{
+  "name": "dromedary",
+  "version": "1.0.0",
+  "description": "dromedary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/randiantech/dromedary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/randiantech/dromedary/issues"
+  },
+  "homepage": "https://github.com/randiantech/dromedary"
+}
