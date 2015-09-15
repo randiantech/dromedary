@@ -1,0 +1,16 @@
+{
+  "config": {
+    "port": 3444
+  },
+  "routes": {
+    "/person": {
+      "middleware": {
+        "set_headers": {
+          "headers": {
+            "test_header": "value"
+          }
+        }
+      }
+    }
+  }
+}

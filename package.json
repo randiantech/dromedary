@@ -2,7 +2,7 @@
   "name": "dromedary",
   "version": "1.0.0",
   "description": "dromedary",
-  "main": "index.js",
+  "main": "lib.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +10,14 @@
     "type": "git",
     "url": "https://github.com/randiantech/dromedary.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Juan Carlos Cancela <cancela.juancarlos@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/randiantech/dromedary/issues"
+  },
+  "dependencies":{
+    "body-parser": "1.13.3",
+    "express": "4.13.3"
   },
   "homepage": "https://github.com/randiantech/dromedary"
 }
