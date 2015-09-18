@@ -15,9 +15,10 @@
   "bugs": {
     "url": "https://github.com/randiantech/dromedary/issues"
   },
-  "dependencies":{
+  "dependencies": {
     "body-parser": "1.13.3",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "request": "^2.62.0"
   },
   "homepage": "https://github.com/randiantech/dromedary"
 }

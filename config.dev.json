@@ -1,13 +1,19 @@
 {
-  "config": {
+  "env": {
     "port": 3444
   },
   "routes": {
     "/person": {
+      "method":"GET",
       "middleware": {
         "set_headers": {
           "headers": {
             "test_header": "value"
+          },
+          "http": {
+            "uri":"http://jsonplaceholder.typicode.com/posts",
+            "method":"GET",
+            "timeout":15000
           }
         }
       }
