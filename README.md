@@ -1,4 +1,3 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Dromedary_2_(PSF).png/1280px-Dromedary_2_(PSF).pn" alt="Drawing" style="width: 200px;"/>
-
+<img src="https://raw.githubusercontent.com/randiantech/dromedary/master/dromedary.png" width="200">
 
 # Dromedary
