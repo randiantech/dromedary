@@ -15,10 +15,16 @@
   "bugs": {
     "url": "https://github.com/randiantech/dromedary/issues"
   },
+  "preferGlobal": true,
+  "bin": {
+    "dro": "dro.js"
+  },
   "dependencies": {
     "body-parser": "1.13.3",
     "express": "4.13.3",
-    "request": "^2.62.0"
+    "lodash": "^3.10.1",
+    "request": "^2.62.0",
+    "winston": "^1.1.0"
   },
   "homepage": "https://github.com/randiantech/dromedary"
 }

@@ -16,9 +16,9 @@ function plugin(req, res, cb) {
     var method = _.method;
 
     request({
-        uri: _['uri'] || _['url'],
-        method: _['method'].toUpperCase(),
-        timeout: _['timeout'],
+        uri: _.uri || _.url,
+        method: _.method.toUpperCase(),
+        timeout: _.timeout,
         followRedirect: false,
         maxRedirects: 0
     }, function(error, response, body) {
