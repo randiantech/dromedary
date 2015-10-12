@@ -29,7 +29,11 @@
           "uri": "http://jsonplaceholder.typicode.com/posts",
           "method": "GET",
           "timeout": 15000,
-          "id":"LALA"
+          "data":"jhr"
+        },
+        "add jsonplaceholder data to service response":{
+          "pluginName":"set_response_body",
+          "data":"jhr"
         }
       }
     }

@@ -8,6 +8,16 @@ function cfg(req) {
     return DF['routes'][req.baseUrl]['flow'][name];
 }
 
+function saveData(req, data, dataKey){
+    req['____' + dataKey] = data;
+}
+
+function getData(req, dataKey){
+    return req['____' + dataKey];
+}
+
 module.exports = {
-  cfg : cfg
+  cfg : cfg,
+  saveData : saveData,
+  getData : getData
 };

@@ -14,8 +14,8 @@ function _getPlugin(pluginName){
     return require(localPluginsPath + pluginName).plugin || require(pluginName).plugin;
 }
 
-function _after(req, res){
-    res.send(200);
+function _finally(req, res){
+    res.status(200).send(res.body);
 }
 
 function start(dromedaryFilePath){
@@ -31,7 +31,7 @@ function start(dromedaryFilePath){
         Object.keys(DF.routes[route].flow).forEach(function(flownStepName){
             app.use(route, _getPlugin(DF.routes[route]['flow'][flownStepName].pluginName));
         });
-        app.get('/*', _after);
+        app.get('/*', _finally);
     });
 
 }
