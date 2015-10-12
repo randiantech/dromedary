@@ -1,6 +1,6 @@
 {
   "name": "dromedary",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dromedary",
   "main": "lib.js",
   "scripts": {
