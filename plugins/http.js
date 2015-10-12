@@ -1,4 +1,5 @@
 var request = require("request");
+var cfg = require("../plugin").cfg;
 
 /**
  * http plugin for Dromedary framework
@@ -7,19 +8,25 @@ var request = require("request");
  * @param cb the callback function
  */
 function plugin(req, res, cb) {
-    var http = CONFIG_FILE['routes'][req.baseUrl]['middleware']['http'];
-    var url = http['url'];
-    var method = http['method'];
+    console.log("->http plugin");
+    var _ = cfg(req);
+    var id = _['id'];
+    var url = _['url'];
+    var method = _['method'];
 
     request({
-        uri: http['url'],
-        method: http['method'].toUpperCase(),
-        timeout: http['timeout'],
+        uri: _['uri'] || _['url'],
+        method: _['method'].toUpperCase(),
+        timeout: _['timeout'],
         followRedirect: false,
         maxRedirects: 0
     }, function(error, response, body) {
-        if(error) cb(error);
-        cb();
+        if(error) {
+            cb(error);
+        } else {
+            req['___' + id] = response;
+            cb();
+        }
     });
 }
 

@@ -1,0 +1,37 @@
+{
+  "env": {
+    "port": 3444
+  },
+  "routes": {
+    "/person": {
+      "method": "GET",
+      "flow": {
+        "Set value request header": {
+          "pluginName":"set_request_header",
+          "header": {
+            "test_header": "value"
+          }
+        },
+        "Set value2 request header": {
+          "pluginName":"set_request_header",
+          "header": {
+            "test_header_2": "value2"
+          }
+        },
+        "Set value response header": {
+          "pluginName":"set_response_header",
+          "header": {
+            "test_header_rsp": "valueResponse"
+          }
+        },
+        "call jsonplaholder svc": {
+          "pluginName":"http",
+          "uri": "http://jsonplaceholder.typicode.com/posts",
+          "method": "GET",
+          "timeout": 15000,
+          "id":"LALA"
+        }
+      }
+    }
+  }
+}

@@ -1,32 +1,42 @@
-var environment = 'dev';
-var CONFIG_FILE_PATH = './config.'+ environment +'.json';
 var express = require('express');
 var bodyParser = require('body-parser');
-var process = require('./lib/middleware').process;
+var localPluginsPath = "./plugins/";
 
-CONFIG_FILE = require(CONFIG_FILE_PATH);
+DF = null;
 
-
-function start(){
-    var app = express();
-    app.use( bodyParser.json() );
-    app.set('port', CONFIG_FILE['env']['port']);
-    app.listen(app.get('port'), function () { console.log("started"); });
-
-    Object.keys(CONFIG_FILE['routes']).forEach(function(route){
-        Object.keys(CONFIG_FILE['routes'][route]['middleware']).forEach(function(componentName){
-            var plugin = require("./plugins/" + componentName).plugin || require(componentName).plugin;
-            app.use(route, plugin);
-            switch(CONFIG_FILE['routes'][route]['method']){
-                case 'GET':
-                case 'get':
-                    app.get(route, process);
-            }
-        });
-    });
+/**
+ * gets the plugin associated to the given component name
+ * @param pluginName the name of the required plugin
+ * @returns {plugin} the plugin associated to the given component name
+ * @private
+ */
+function _getPlugin(pluginName){
+    return require(localPluginsPath + pluginName).plugin || require(pluginName).plugin;
 }
 
-start();
+function _after(req, res){
+    res.send(200);
+}
+
+function start(dromedaryFilePath){
+    var app = express();
+    DF = require(dromedaryFilePath);
+    app.use( bodyParser.json() );
+    app.set('port', DF.env.port);
+    app.listen(app.get('port'), function () {
+        console.log("->dromedary running in port " + DF.env.port);
+    });
+
+    Object.keys(DF.routes).forEach(function(route){
+        Object.keys(DF.routes[route].flow).forEach(function(flownStepName){
+            app.use(route, _getPlugin(DF.routes[route]['flow'][flownStepName].pluginName));
+        });
+        app.get('/*', _after);
+    });
+
+}
+
+start('./dromedaryFile.json');
 
 module.exports = {
     start : start
