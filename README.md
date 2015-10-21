@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/randiantech/dromedary/master/docs/logo.png" width="200">
+<img src="https://raw.githubusercontent.com/randiantech/dromedary/master/docs/logo.png">
 
 # Dromedary
 
