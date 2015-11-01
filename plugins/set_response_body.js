@@ -1,5 +1,5 @@
-var cfg = require("../plugin.js").cfg;
-var getData = require("../plugin").getData;
+var cfg = require("../lib/plugin.js").cfg;
+var getData = require("../lib/plugin").getData;
 
 /**
  * set_response_body plugin for Dromedary library.
