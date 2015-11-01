@@ -1,6 +1,6 @@
 var request = require("request");
-var cfg = require("../plugin").cfg;
-var saveData = require("../plugin").saveData;
+var cfg = require("../lib/plugin").cfg;
+var saveData = require("../lib/plugin").saveData;
 
 /**
  * http plugin for Dromedary framework
@@ -11,10 +11,6 @@ var saveData = require("../plugin").saveData;
 function plugin(req, res, cb) {
     console.log("->http plugin");
     var _ = cfg(req);
-    var id = _.id;
-    var url = _.url;
-    var method = _.method;
-
     request({
         uri: _.uri || _.url,
         method: _.method.toUpperCase(),
