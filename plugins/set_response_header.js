@@ -1,4 +1,4 @@
-var cfg = require("../plugin").cfg;
+var cfg = require("../lib/plugin").cfg;
 
 /**
  * set_response_header plugin for Dromedary library
