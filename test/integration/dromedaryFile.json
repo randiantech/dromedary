@@ -7,24 +7,26 @@
       "method": "GET",
       "flow": {
         "Set value request header": {
-          "pluginName":"set_request_header",
+          "pluginName":"dro-set-req-header",
           "header": {
             "test_header": "value"
           }
         },
         "Set value2 request header": {
-          "pluginName":"set_request_header",
+          "pluginName":"dro-set-req-header",
           "header": {
             "test_header_2": "value2"
           }
         },
         "Set value response header": {
           "pluginName":"set_response_header",
+          "isLocalPlugin":true,
           "header": {
             "test_header_rsp": "valueResponse"
           }
         },
         "call jsonplaholder svc": {
+          "isLocalPlugin":true,
           "pluginName":"http",
           "uri": "http://jsonplaceholder.typicode.com/posts",
           "method": "GET",
@@ -32,6 +34,7 @@
           "data":"jhr"
         },
         "add jsonplaceholder data to service response":{
+          "isLocalPlugin":true,
           "pluginName":"set_response_body",
           "data":"jhr"
         }
