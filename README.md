@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/randiantech/dromedary/master/docs/logo.png">
 
-# Dromedary
+# Dromedary Framework
 
 !Note: Dromedary is in experimental state, and by no means its ready for production use. We'll let you know once Dromedary is ready to go!
 
