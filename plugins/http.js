@@ -9,7 +9,6 @@ var saveData = require("../lib/plugin").saveData;
  * @param cb the callback function
  */
 function plugin(req, res, cb) {
-    console.log("->http plugin");
     var _ = cfg(req);
     request({
         uri: _.uri || _.url,

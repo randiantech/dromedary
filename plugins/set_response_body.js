@@ -9,7 +9,6 @@ var getData = require("../lib/plugin").getData;
  * @param cb the callback function
  */
 function plugin(req, res, cb) {
-    console.log("->set response body");
     var _ = cfg(req);
     res.body = JSON.parse(getData(req, _.data).body);
     cb();

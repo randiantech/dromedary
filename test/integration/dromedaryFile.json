@@ -25,18 +25,10 @@
             "test_header_rsp": "valueResponse"
           }
         },
-        "call jsonplaholder svc": {
+        "call another dro file": {
           "isLocalPlugin":true,
-          "pluginName":"http",
-          "uri": "http://jsonplaceholder.typicode.com/posts",
-          "method": "GET",
-          "timeout": 15000,
-          "data":"jhr"
-        },
-        "add jsonplaceholder data to service response":{
-          "isLocalPlugin":true,
-          "pluginName":"set_response_body",
-          "data":"jhr"
+          "pluginName":"composite",
+          "path":"../test/integration/dromedaryFile2.json"
         }
       }
     }

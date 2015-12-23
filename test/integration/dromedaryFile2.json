@@ -1,0 +1,25 @@
+{
+  "env": {
+    "port": 3444
+  },
+  "routes": {
+    "/person": {
+      "method": "GET",
+      "flow": {
+        "call jsonplaholder svc": {
+          "isLocalPlugin":true,
+          "pluginName":"http",
+          "uri": "http://jsonplaceholder.typicode.com/posts",
+          "method": "GET",
+          "timeout": 15000,
+          "data":"jhr"
+        },
+        "add jsonplaceholder data to service response":{
+          "isLocalPlugin":true,
+          "pluginName":"set_response_body",
+          "data":"jhr"
+        }
+      }
+    }
+  }
+}
