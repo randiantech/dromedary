@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/randiantech/dromedary/master/docs/logo.png">
 
-<b>Dromedary provides a lightweight, configuration driven solution to enable limitless integrations in an API centric world.</b>
+<b>Dromedary provides a lightweight, configuration driven solution to enable http based integration of any kind of existing systems</b>
 
 ### [Website](http://dromedary.github.io/)  &nbsp; [Getting Started](http://dromedary.github.io/start) &nbsp;  [Docs](http://dromedary.github.io/docs)  &nbsp;
 
