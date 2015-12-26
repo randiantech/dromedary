@@ -1,6 +1,7 @@
 {
   "env": {
-    "port": 3444
+    "port": 3444,
+    "localPlugins":"../plugins"
   },
   "routes": {
     "/person": {
