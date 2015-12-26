@@ -1,10 +1,10 @@
 <img src="https://raw.githubusercontent.com/randiantech/dromedary/master/docs/logo.png">
 
-# Dromedary Framework
+<b>Dromedary provides a lightweight, configuration driven solution to enable http based integration of any kind of existing systems</b>
+
+### [Website](http://dromedary.github.io/)  &nbsp; [Getting Started](http://dromedary.github.io/start) &nbsp;  [Docs](http://dromedary.github.io/docs)  &nbsp;
 
 !Note: Dromedary is in experimental state, and by no means its ready for production use. We'll let you know once Dromedary is ready to go!
-
-<b>Dromedary provides a lightweight, configuration driven solution to enable limitless integrations in an API centric world.</b>
 
 
 # In a nutshell
