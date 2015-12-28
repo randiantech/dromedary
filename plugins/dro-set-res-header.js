@@ -8,6 +8,7 @@ var cfg = require("../lib/plugin").cfg;
  * @param cb the callback function
  */
 function plugin(req, res, cb) {
+    console.log("->dro-set-res-header   ");
     var _ = cfg(req);
     Object.keys(_['header']).forEach(function (headerName) {
         res.header(headerName, _['header'][headerName]);

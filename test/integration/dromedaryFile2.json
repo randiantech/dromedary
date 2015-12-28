@@ -2,24 +2,30 @@
   "env": {
     "port": 3444
   },
-  "routes": {
-    "/person": {
+  "routes": [
+    {
+      "path": "/person",
       "method": "GET",
-      "flow": {
-        "call jsonplaholder svc": {
-          "isLocalPlugin":true,
-          "pluginName":"http",
+      "flow": [
+        {
+          "description": "Call jsonplaholder svc",
+          "name": "http",
+          "isLocalPlugin": true,
           "uri": "http://jsonplaceholder.typicode.com/posts",
           "method": "GET",
           "timeout": 15000,
-          "data":"jhr"
+          "data": "jhr"
         },
-        "add jsonplaceholder data to service response":{
-          "isLocalPlugin":true,
-          "pluginName":"set_response_body",
-          "data":"jhr"
+        {
+          "description": "Add jsonplaceholder data to service response",
+          "name": "dro-set-res-body",
+          "isLocalPlugin": true,
+          "data": "jhr"
         }
-      }
+      ]
     }
+  ],
+  "conditions": {
+    "isNotNull": "req != null"
   }
 }

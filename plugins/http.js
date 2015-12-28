@@ -9,6 +9,7 @@ var saveData = require("../lib/plugin").saveData;
  * @param cb the callback function
  */
 function plugin(req, res, cb) {
+    console.log("->dro-http");
     var _ = cfg(req);
     request({
         uri: _.uri || _.url,

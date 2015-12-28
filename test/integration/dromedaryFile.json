@@ -1,37 +1,46 @@
 {
   "env": {
     "port": 3444,
-    "localPlugins":"../plugins"
+    "localPlugins": "../plugins"
   },
-  "routes": {
-    "/person": {
+  "routes": [
+    {
+      "path": "/person",
       "method": "GET",
-      "flow": {
-        "Set value request header": {
-          "pluginName":"dro-set-req-header",
+      "flow": [
+        {
+          "description": "Set value request header",
+          "name": "dro-set-req-header",
+          "conditions": "isNotNull",
           "header": {
             "test_header": "value"
           }
         },
-        "Set value2 request header": {
-          "pluginName":"dro-set-req-header",
-          "header": {
-            "test_header_2": "value2"
-          }
-        },
-        "Set value response header": {
-          "pluginName":"set_response_header",
-          "isLocalPlugin":true,
+        {
+          "description": "Set value response header",
+          "name": "dro-set-res-header",
+          "isLocalPlugin": true,
           "header": {
             "test_header_rsp": "valueResponse"
           }
         },
-        "call another dro file": {
-          "isLocalPlugin":true,
-          "pluginName":"composite",
-          "path":"../test/integration/dromedaryFile2.json"
+        {
+          "description": "Set value2 request header",
+          "name": "dro-set-req-header",
+          "header": {
+            "test_header_2": "value2"
+          }
+        },
+        {
+          "description": "Call another dro file",
+          "name": "composite",
+          "isLocalPlugin": true,
+          "path": "../test/integration/dromedaryFile2.json"
         }
-      }
+      ]
     }
+  ],
+  "conditions": {
+    "isEvenDate": "req.date.year % 2 == 0"
   }
 }
