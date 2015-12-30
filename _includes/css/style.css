@@ -342,9 +342,22 @@ a:focus {
 	line-height: 30px;
 }
 
+/* architecture section */
+#cwrap-arch {
+	background: orangered;
+	margin-top: 0px;
+	padding-top: 80px;
+	padding-bottom: 100px;
+	color: white;
+}
+
+#cwrap-arch p {
+	color: white;
+}
+
 /* clients logo */
 #cwrap {
-	background: #f7f7f7;
+	background: #FF440B;
 	margin-top: 0px;
 	padding-top: 80px;
 	padding-bottom: 100px;
@@ -504,4 +517,8 @@ a.anchor{
     position: relative; 
     top: -80px; 
     visibility: hidden;
+}
+
+.img-arch {
+	padding-left: 15px !important;
 }
