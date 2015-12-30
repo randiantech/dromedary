@@ -26,15 +26,9 @@ colors:  #in hex code if not noted else
 
 # Social networks usernames. Many more available: google-plus, flickr, linkedin, etc). Shown in footer.
 social:
-  - title: facebook
-    url:
   - title: twitter
     url: 
-  - title: instagram
-    url: 
-  - title: tumblr
-    url: 
-    
+
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
   - lines: 
@@ -49,18 +43,20 @@ tel: +34 8493-4893
     
 # Members information. Shown on About page.
 members:
-  - name: Mark Webber
-    position: CEO
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    img: team01.jpg
+  - name: Juan Carlos Cancela
+    position: Developer
+    text: Motivated, action-oriented technology enthusiast with experience on multiple industries designing cutting-edge Web API-centric applications.
+    img: jc.jpg
     social:
-      - title: envelope #use for email address
-        url: mailto:name@domain.com
+      - title: linkedin
+        url: https://ar.linkedin.com/in/juancarloscancela
+      - title: envelope
+        url: mailto:cancela.juancarlos@gmail.com
       - title: twitter
-        url: http://twitter.com/handle
-  - name: Paul Jameson
-    position: Lead Designer
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        url: http://twitter.com/devtripper
+  - name: Lucas Campana
+    position: Developer
+    text: Software architect at Cablevision
     img: team02.jpg
     social:
       - title: envelope #use for email address
