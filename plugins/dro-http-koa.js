@@ -1,27 +1,13 @@
 //use strict;
 
-var request = require("request");
+var request = require('koa-request');
 var cfg = require("../lib/plugin").cfg;
-var saveData = require("../lib/plugin").saveData;
 
-function *plugin(next) {
-    yield next;
+function *plugin(){
     console.log("->dro-koa-http");
     var _ = cfg(this.request);
-    request({
-        uri: _.uri || _.url,
-        method: _.method.toUpperCase(),
-        timeout: _.timeout,
-        followRedirect: false,
-        maxRedirects: 0
-    }, function(error, response, body) {
-        if(error) {
-            this.body = error;
-        } else {
-            saveData(this.req, response, _.data);
-            this.body = body;
-        }
-    });
+    var response = yield request({url: _.uri});
+    this.body = JSON.parse(response.body);
 }
 
 /**
