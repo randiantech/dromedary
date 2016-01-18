@@ -1,0 +1,26 @@
+{
+  "env": {
+    "port": 3444,
+    "localPlugins": "../plugins"
+  },
+  "routes": [
+    {
+      "path": "/person",
+      "method": "GET",
+      "flow": [
+        {
+          "description": "Call jsonplaholder svc",
+          "name": "dro-http-koa",
+          "isLocalPlugin": true,
+          "uri": "http://jsonplaceholder.typicode.com/posts",
+          "method": "GET",
+          "timeout": 15000,
+          "data": "jhr"
+        }
+      ]
+    }
+  ],
+  "conditions": {
+    "isEvenDate": "req.date.year % 2 == 0"
+  }
+}
